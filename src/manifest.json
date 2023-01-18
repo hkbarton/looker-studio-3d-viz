@@ -1,0 +1,25 @@
+{
+  "name": "Scatter Plot 3D",
+  "logoUrl": "https://storage.googleapis.com/testingviz/ls-3pviz-demo/3d-scatter-plot.png",
+  "organization": "Looker",
+  "organizationUrl": "https://www.google.com",
+  "termsOfServiceUrl": "https://www.google.com",
+  "supportUrl": "https://www.google.com",
+  "packageUrl": "https://www.google.com",
+  "privacyPolicyUrl": "https://www.google.com",
+  "description": "3D scatter plot chart",
+  "devMode": true,
+  "components": [
+    {
+      "id": "scatterPlot3D",
+      "name": "Scatter Plot 3D",
+      "iconUrl": "https://storage.googleapis.com/testingviz/ls-3pviz-demo/3d-scatter-plot.png",
+      "description": "3D scatter plot chart",
+      "resource": {
+        "js": "gs://testingviz/ls-3pviz-demo/scatter-plot-3d.js",
+        "config": "gs://testingviz/ls-3pviz-demo/scatter-plot-3d.json",
+        "css": "gs://testingviz/ls-3pviz-demo/scatter-plot-3d.css"
+      }
+    }
+  ]
+}
