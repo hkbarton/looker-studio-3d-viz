@@ -37,8 +37,12 @@ export abstract class Chart {
   protected camera: THREE.PerspectiveCamera;
 
   constructor(protected config: ChartConfig) {
-    const geoConfig = { width: 600, height: 400 };
     const { container } = config;
+    const containerRect = container.getBoundingClientRect();
+    const geoConfig = {
+      width: containerRect.width,
+      height: containerRect.height,
+    };
     this.renderer = new three.WebGLRenderer();
     this.renderer.setSize(geoConfig.width, geoConfig.height);
     this.renderer.setPixelRatio(window.devicePixelRatio);
