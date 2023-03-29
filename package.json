@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npx webpack serve --config ./webpack.config.dev.js",
     "build": "npx webpack",
-    "publish": "npx webpack && gsutil cp ./build/* gs://testingviz/ls-3pviz-demo"
+    "publish": "npx webpack && gsutil cp ./build/* gs://testingviz/ls-3pviz-demo && gsutil acl ch -r -u AllUsers:R gs://testingviz/ls-3pviz-demo"
   },
   "author": "Edwin Huang",
   "license": "ISC",
