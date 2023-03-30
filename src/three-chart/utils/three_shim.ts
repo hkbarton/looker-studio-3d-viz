@@ -3,10 +3,11 @@
 import * as THREE from "three";
 
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { Font } from "three/examples/jsm/loaders/FontLoader";
+import { Font, FontLoader } from "three/examples/jsm/loaders/FontLoader";
 
 export const three = {
   ...THREE,
   OrbitControls,
   Font,
+  FontLoader,
 };

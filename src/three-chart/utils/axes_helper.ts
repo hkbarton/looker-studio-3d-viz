@@ -157,53 +157,58 @@ export function createAxes(
   );
 
   // draw axes label
-  const font = new three.Font(fontHelvetikerBold);
-  const labelMaterial = new three.MeshBasicMaterial({
-    color: 0x333333,
-    side: three.DoubleSide,
-  });
-  // draw z axis label
-  for (const zValue of zValues) {
-    const labelShape = font.generateShapes(zValue, 0.4);
-    const labelGeometry = new three.ShapeGeometry(labelShape);
-    labelGeometry.rotateX(-1.3);
-    const label = new three.Mesh(labelGeometry, labelMaterial);
-    label.position.set(
-      (xValues.length - 1) * AXES_UNIT_SIZE + 2.5 * AXES_MARGIN,
-      0,
-      zValueByIdx[zValue] * AXES_UNIT_SIZE + AXES_MARGIN
-    );
-    scene.add(label);
-  }
-  // draw x axis label
-  for (const xValue of xValues) {
-    const labelShape = font.generateShapes(xValue, 0.4);
-    const labelGeometry = new three.ShapeGeometry(labelShape);
-    labelGeometry.rotateX(-1.3);
-    labelGeometry.rotateY(0.8);
-    labelGeometry.computeBoundingBox();
-    const label = new three.Mesh(labelGeometry, labelMaterial);
-    label.position.set(
-      xValueByIdx[xValue] * AXES_UNIT_SIZE + AXES_MARGIN,
-      0,
-      (zValues.length - 1) * AXES_UNIT_SIZE +
-        2.5 * AXES_MARGIN +
-        (labelGeometry.boundingBox?.max.x || 0)
-    );
-    scene.add(label);
-  }
-  // draw y axis label
-  for (const yValue of yValues) {
-    const labelShape = font.generateShapes(yValue, 0.4);
-    const labelGeometry = new three.ShapeGeometry(labelShape);
-    const label = new three.Mesh(labelGeometry, labelMaterial);
-    label.position.set(
-      (xValues.length - 1) * AXES_UNIT_SIZE + 2.5 * AXES_MARGIN,
-      yValueByIdx[yValue] * AXES_UNIT_SIZE + AXES_MARGIN,
-      0
-    );
-    scene.add(label);
-  }
+  const loader = new three.FontLoader();
+  loader.load(
+    "https://storage.googleapis.com/testingviz/ls-3pviz-demo/fonts/helvetiker_bold.typeface.json",
+    (font) => {
+      const labelMaterial = new three.MeshBasicMaterial({
+        color: 0x333333,
+        side: three.DoubleSide,
+      });
+      // draw z axis label
+      for (const zValue of zValues) {
+        const labelShape = font.generateShapes(zValue, 0.4);
+        const labelGeometry = new three.ShapeGeometry(labelShape);
+        labelGeometry.rotateX(-1.3);
+        const label = new three.Mesh(labelGeometry, labelMaterial);
+        label.position.set(
+          (xValues.length - 1) * AXES_UNIT_SIZE + 2.5 * AXES_MARGIN,
+          0,
+          zValueByIdx[zValue] * AXES_UNIT_SIZE + AXES_MARGIN
+        );
+        scene.add(label);
+      }
+      // draw x axis label
+      for (const xValue of xValues) {
+        const labelShape = font.generateShapes(xValue, 0.4);
+        const labelGeometry = new three.ShapeGeometry(labelShape);
+        labelGeometry.rotateX(-1.3);
+        labelGeometry.rotateY(0.8);
+        labelGeometry.computeBoundingBox();
+        const label = new three.Mesh(labelGeometry, labelMaterial);
+        label.position.set(
+          xValueByIdx[xValue] * AXES_UNIT_SIZE + AXES_MARGIN,
+          0,
+          (zValues.length - 1) * AXES_UNIT_SIZE +
+            2.5 * AXES_MARGIN +
+            (labelGeometry.boundingBox?.max.x || 0)
+        );
+        scene.add(label);
+      }
+      // draw y axis label
+      for (const yValue of yValues) {
+        const labelShape = font.generateShapes(yValue, 0.4);
+        const labelGeometry = new three.ShapeGeometry(labelShape);
+        const label = new three.Mesh(labelGeometry, labelMaterial);
+        label.position.set(
+          (xValues.length - 1) * AXES_UNIT_SIZE + 2.5 * AXES_MARGIN,
+          yValueByIdx[yValue] * AXES_UNIT_SIZE + AXES_MARGIN,
+          0
+        );
+        scene.add(label);
+      }
+    }
+  );
 
   return { xValueByIdx, yValueByIdx, zValueByIdx };
 }

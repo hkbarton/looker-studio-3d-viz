@@ -26,6 +26,9 @@ module.exports = {
     },
     compress: true,
     port: 9000,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
   },
   plugins: [
     new CopyPlugin({
@@ -45,6 +48,13 @@ module.exports = {
         {
           from: path.resolve(__dirname, "src/scatter-plot-3d.css"),
           to: path.resolve(__dirname, "build"),
+        },
+        {
+          from: path.resolve(
+            __dirname,
+            "src/three-chart/fonts/*.typeface.json"
+          ),
+          to: path.resolve(__dirname, "build/fonts/[name][ext]"),
         },
       ],
     }),
