@@ -7,13 +7,25 @@
       height: 100%;
     }
 
+    .page {
+      display: flex;
+    }
+
     #container {
-      width: 100%;
-      height: 100%;
+      width: 500px;
+      height: 500px;
+    }
+
+    #pieContainer {
+      flex-grow: 1;
     }
   </style>
+  <head> </head>
   <body>
-    <div id="container"></div>
+    <div class="page">
+      <div class="chart" id="container"></div>
+      <div class="chart" id="pieContainer"></div>
+    </div>
     <script lang="javascript" src="./dev-bundle.js"></script>
   </body>
 </html>

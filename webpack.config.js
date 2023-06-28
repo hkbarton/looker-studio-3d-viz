@@ -2,7 +2,10 @@ const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.ts",
+  entry: {
+    "scatter-plot-3d": "./src/scatter-plot-3d.ts",
+    "pie-chart": "./src/pie-chart.ts",
+  },
   module: {
     rules: [
       {
@@ -18,7 +21,7 @@ module.exports = {
   mode: "production",
   output: {
     path: path.resolve(__dirname, "build"),
-    filename: "scatter-plot-3d.js",
+    filename: "[name].js",
   },
   plugins: [
     new CopyPlugin({
@@ -33,6 +36,14 @@ module.exports = {
         },
         {
           from: path.resolve(__dirname, "src/scatter-plot-3d.css"),
+          to: path.resolve(__dirname, "build"),
+        },
+        {
+          from: path.resolve(__dirname, "src/pie-chart.json"),
+          to: path.resolve(__dirname, "build"),
+        },
+        {
+          from: path.resolve(__dirname, "src/pie-chart.css"),
           to: path.resolve(__dirname, "build"),
         },
       ],

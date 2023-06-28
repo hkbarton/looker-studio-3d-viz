@@ -1,29 +1,9 @@
-import { ThreeScatterPlot } from "./three-chart/ThreeScatterPlot";
+import { subscribeToData, objectTransform } from "@google/dscc";
+import { demoData } from "./three-chart/demo_data";
+import { drawViz } from "./scatter-plot-3d-internal";
 
-export function drawViz(data: any) {
-  // Container setup.
-  const html = document.querySelector("html");
-  if (html && html.style) {
-    html.style.height = "100%";
-  }
-  const body = document.querySelector("body");
-  if (body && body.style) {
-    body.style.height = "100%";
-  }
-  let container = document.getElementById("container");
-  if (container) {
-    container.textContent = "";
-  } else {
-    container = document.createElement("div");
-    container.id = "container";
-    container.style.width = "100%";
-    container.style.height = "100%";
-    document.body.appendChild(container);
-  }
-
-  // Render the viz.
-  new ThreeScatterPlot({
-    container,
-    data,
-  });
-}
+// Subscribe to data and style changes. Use the table format for data.
+// TODO remove mock data
+subscribeToData(() => drawViz(demoData.youtubeSubscriber), {
+  transform: objectTransform,
+});

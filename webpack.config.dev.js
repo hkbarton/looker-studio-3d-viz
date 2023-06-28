@@ -46,6 +46,14 @@ module.exports = {
           from: path.resolve(__dirname, "src/scatter-plot-3d.css"),
           to: path.resolve(__dirname, "build"),
         },
+        {
+          from: path.resolve(__dirname, "src/pie-chart.json"),
+          to: path.resolve(__dirname, "build"),
+        },
+        {
+          from: path.resolve(__dirname, "src/pie-chart.css"),
+          to: path.resolve(__dirname, "build"),
+        },
       ],
     }),
   ],

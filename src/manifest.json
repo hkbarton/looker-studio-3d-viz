@@ -1,5 +1,5 @@
 {
-  "name": "Scatter Plot 3D",
+  "name": "LS Community Viz Test",
   "logoUrl": "https://storage.googleapis.com/testingviz/ls-3pviz-demo/3d-scatter-plot.png",
   "organization": "Looker",
   "organizationUrl": "https://www.google.com",
@@ -19,6 +19,17 @@
         "js": "gs://testingviz/ls-3pviz-demo/scatter-plot-3d.js",
         "config": "gs://testingviz/ls-3pviz-demo/scatter-plot-3d.json",
         "css": "gs://testingviz/ls-3pviz-demo/scatter-plot-3d.css"
+      }
+    },
+    {
+      "id": "pieChart",
+      "name": "Pie Chart use Google Chart",
+      "iconUrl": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+      "description": "Pie Chart use Google Chart",
+      "resource": {
+        "js": "gs://testingviz/ls-3pviz-demo/pie-chart.js",
+        "config": "gs://testingviz/ls-3pviz-demo/pie-chart.json",
+        "css": "gs://testingviz/ls-3pviz-demo/pie-chart.css"
       }
     }
   ]
