@@ -1,13 +1,14 @@
 {
   "name": "Scatter Plot 3D",
   "logoUrl": "https://storage.googleapis.com/testingviz/ls-3pviz-demo/3d-scatter-plot.png",
-  "organization": "Looker",
-  "organizationUrl": "https://www.google.com",
-  "termsOfServiceUrl": "https://www.google.com",
-  "supportUrl": "https://www.google.com",
-  "packageUrl": "https://www.google.com",
-  "privacyPolicyUrl": "https://www.google.com",
-  "description": "3D scatter plot chart",
+  "manifestVersion": "1.0",
+  "author": "Edwin Huang",
+  "authorUrl": "https://moma.corp.google.com/person/edwinhuang",
+  "supportUrl": "https://www.google.com/support",
+  "packageUrl": "https://www.google.com/package",
+  "privacyPolicyUrl": "https://www.google.com/privacy",
+  "shortDescription": "3D scatter plot chart",
+  "description": "3D scatter plot chart using three.js, support up to 4 dimensions.",
   "devMode": true,
   "components": [
     {
@@ -19,7 +20,43 @@
         "js": "gs://testingviz/ls-3pviz-demo/scatter-plot-3d.js",
         "config": "gs://testingviz/ls-3pviz-demo/scatter-plot-3d.json",
         "css": "gs://testingviz/ls-3pviz-demo/scatter-plot-3d.css"
-      }
+      },
+      "consentMessage": "We need your email and access our API to verify your license",
+      "dependencies": [
+        {
+          "id": "d3js",
+          "type": "JS",
+          "urls": ["https://d3js.org/d3.v7.min.js"]
+        },
+        {
+          "id": "font_helvetiker_bold",
+          "type": "EXTERNAL_DATA",
+          "urls": [
+            "https://storage.googleapis.com/testingviz/ls-3pviz-demo/fonts/helvetiker_bold.typeface.json"
+          ]
+        },
+        {
+          "id": "license_validation",
+          "type": "EXTERNAL_DATA",
+          "urls": ["https://license.com/validation?user=${EMAIL}"]
+        }
+      ],
+      "privileges": [
+        {
+          "type": "METADATA",
+          "parameters": [
+            "EMAIL",
+            "ORG_ID",
+            "REPORT_ID",
+            "DATASOURCE_ID",
+            "CHART_ID"
+          ]
+        },
+        {
+          "type": "EXTERNAL_REQUEST",
+          "urls": ["https://tracking.com/track"]
+        }
+      ]
     }
   ]
 }
