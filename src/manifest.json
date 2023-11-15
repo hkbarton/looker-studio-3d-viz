@@ -1,7 +1,7 @@
 {
   "name": "Scatter Plot 3D",
   "logoUrl": "https://storage.googleapis.com/testingviz/ls-3pviz-demo/3d-scatter-plot.png",
-  "manifestVersion": "1.0",
+  "manifestVersion": "1.0.0",
   "author": "Edwin Huang",
   "authorUrl": "https://moma.corp.google.com/person/edwinhuang",
   "supportUrl": "https://www.google.com/support",
@@ -23,11 +23,6 @@
       },
       "consentMessage": "We need your email and access our API to verify your license",
       "dependencies": [
-        {
-          "id": "d3js",
-          "type": "JS",
-          "urls": ["https://d3js.org/d3.v7.min.js"]
-        },
         {
           "id": "font_helvetiker_bold",
           "type": "EXTERNAL_DATA",
@@ -54,7 +49,9 @@
         },
         {
           "type": "EXTERNAL_REQUEST",
-          "urls": ["https://tracking.com/track"]
+          "urls": [
+            "https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=2"
+          ]
         }
       ]
     }
