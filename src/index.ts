@@ -18,10 +18,11 @@ devLib.registerVisualization((data: any) => {
     const depId = "font_helvetiker_bold";
     const depUrl =
       "https://storage.googleapis.com/testingviz/ls-3pviz-demo/fonts/helvetiker_bold.typeface.json";
-    console.log(
-      "get external data",
-      JSON.parse(data.externalData[`${depId}[${depUrl}]`])
-    );
+    const externalData = data.externalData[`${depId}[${depUrl}]`];
+    console.log("get external data", {
+      status: externalData.statusCode,
+      data: JSON.parse(externalData.response),
+    });
   } else {
     console.log("get platform data", data);
   }
