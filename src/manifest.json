@@ -29,11 +29,6 @@
           "urls": [
             "https://storage.googleapis.com/testingviz/ls-3pviz-demo/fonts/helvetiker_bold.typeface.json"
           ]
-        },
-        {
-          "id": "license_validation",
-          "type": "EXTERNAL_DATA",
-          "urls": ["https://license.com/validation?user=${EMAIL}"]
         }
       ],
       "privileges": [

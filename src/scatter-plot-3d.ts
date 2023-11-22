@@ -10,7 +10,7 @@ export function drawViz(data: any) {
     container.id = "container";
     document.body.appendChild(container);
   }
-  container.style.height = "100%";
+  container.className = "my-container";
 
   // Render the viz.
   new ThreeScatterPlot({
