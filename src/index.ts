@@ -15,10 +15,9 @@ const devLib = window.google.lookerstudio;
 devLib.registerVisualization((data: any) => {
   drawViz(demoData.youtubeSubscriber);
   if (data.type === "EXTERNAL_DATA") {
-    const depId = "font_helvetiker_bold";
     const depUrl =
       "https://storage.googleapis.com/testingviz/ls-3pviz-demo/fonts/helvetiker_bold.typeface.json";
-    const externalData = data.externalData[`${depId}[${depUrl}]`];
+    const externalData = data.externalData[depUrl];
     console.log("get external data", {
       status: externalData.statusCode,
       data: JSON.parse(externalData.response),
