@@ -6,10 +6,12 @@
   "authorUrl": "https://moma.corp.google.com/person/edwinhuang",
   "supportUrl": "https://www.google.com/support",
   "packageUrl": "https://www.google.com/package",
+  "termsOfServiceUrl": "https://www.google.com/privacy",
   "privacyPolicyUrl": "https://www.google.com/privacy",
   "shortDescription": "3D scatter plot chart",
   "description": "3D scatter plot chart using three.js, support up to 4 dimensions.",
   "devMode": true,
+  "consentMessage": "consent message from the developer",
   "components": [
     {
       "id": "scatterPlot3D",
@@ -21,32 +23,21 @@
         "config": "gs://testingviz/ls-3pviz-demo/scatter-plot-3d.json",
         "css": "gs://testingviz/ls-3pviz-demo/scatter-plot-3d.css"
       },
-      "consentMessage": "We need your email and access our API to verify your license",
-      "dependencies": [
-        {
-          "id": "font_helvetiker_bold",
-          "type": "EXTERNAL_DATA",
-          "urls": [
-            "https://storage.googleapis.com/testingviz/ls-3pviz-demo/fonts/helvetiker_bold.typeface.json"
-          ]
-        }
-      ],
       "privileges": [
         {
           "type": "METADATA",
-          "parameters": [
-            "EMAIL",
-            "ORG_ID",
-            "REPORT_ID",
-            "DATASOURCE_ID",
-            "CHART_ID"
-          ]
+          "parameters": ["EMAIL", "ORG_ID"],
+          "description": "my reason of using those metadata"
         },
         {
           "type": "EXTERNAL_REQUEST",
-          "urls": [
-            "https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=2"
-          ]
+          "url": "https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=2",
+          "description": "my reason of using this endpoint"
+        },
+        {
+          "type": "EXTERNAL_DATA",
+          "urls": "https://storage.googleapis.com/testingviz/ls-3pviz-demo/fonts/helvetiker_bold.typeface.json",
+          "description": "my reason of loading this data"
         }
       ]
     }
