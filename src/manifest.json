@@ -26,7 +26,7 @@
       "privileges": [
         {
           "type": "METADATA",
-          "parameters": ["EMAIL", "ORG_ID"],
+          "parameters": ["EMAIL", "ORG_ID", "DATASOURCE_ID"],
           "description": "my reason of using those metadata"
         },
         {
