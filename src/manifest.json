@@ -37,7 +37,7 @@
         {
           "type": "EXTERNAL_DATA",
           "url": "https://storage.googleapis.com/testingviz/ls-3pviz-demo/fonts/helvetiker_bold.typeface.json?email=${METADATA.Email}",
-          "description": "my reason of loading this data"
+          "description": "my reason of loading this data, my reason of loading this data, my reason of loading this data, my reason of loading this data"
         },
         {
           "type": "EXTERNAL_DATA",
