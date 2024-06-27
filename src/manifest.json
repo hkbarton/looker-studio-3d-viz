@@ -11,10 +11,10 @@
   "shortDescription": "3D scatter plot chart",
   "description": "3D scatter plot chart using three.js, support up to 4 dimensions.",
   "devMode": true,
-  "consentMessage": "consent message from the developer",
   "components": [
     {
       "id": "scatterPlot3D",
+      "consentMessage": "consent message from the developer",
       "name": "Scatter Plot 3D",
       "iconUrl": "https://storage.googleapis.com/testingviz/ls-3pviz-demo/3d-scatter-plot.png",
       "description": "3D scatter plot chart",
