@@ -17,6 +17,7 @@
       "consentMessage": "consent message from the developer",
       "name": "Scatter Plot 3D",
       "iconUrl": "https://storage.googleapis.com/testingviz/ls-3pviz-demo/3d-scatter-plot.png",
+      "infoUrl": "https://www.baidu.com",
       "description": "3D scatter plot chart",
       "resource": {
         "js": "gs://testingviz/ls-3pviz-demo/scatter-plot-3d.js",
@@ -26,7 +27,7 @@
       "privileges": [
         {
           "type": "METADATA",
-          "parameters": ["EMAIL", "ORG_ID", "DATASOURCE_ID"],
+          "parameters": ["EMAIL", "ORG_ID", "DATASOURCE_ID", "INSTANCE_ID"],
           "description": "my reason of using those metadata"
         },
         {
@@ -36,12 +37,12 @@
         },
         {
           "type": "EXTERNAL_DATA",
-          "url": "https://storage.googleapis.com/testingviz/ls-3pviz-demo/fonts/helvetiker_bold.typeface.json?email=${METADATA.Email}",
+          "url": "https://storage.googleapis.com/testingviz/ls-3pviz-demo/fonts/helvetiker_bold.typeface.json?email=${METADATA.INSTANCE_ID}",
           "description": "my reason of loading this data, my reason of loading this data, my reason of loading this data, my reason of loading this data"
         },
         {
           "type": "EXTERNAL_DATA",
-          "url": "https://api.supermetrics.com/charts/license/check?datasource=${METADATA.datasourceId}",
+          "url": "https://api.supermetrics.com/charts/license/check?datasource=${METADATA.DATASOURCE_ID}",
           "description": "my reason of loading this data"
         }
       ]
